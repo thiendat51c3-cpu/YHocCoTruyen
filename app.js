@@ -75,16 +75,30 @@
   function lessonItem(l) {
     return el('a', { class: 'lesson-item', href: '#/lesson/' + l.id },
       el('div', { class: 'ico' }, l.icon),
-      el('div', {}, el('div', { class: 't' }, l.title), el('div', { class: 's' }, l.sub + ' · ' + l.minutes + ' phút')),
+      el('div', {}, el('div', { class: 't', html: '' }, l.title), el('div', { class: 's' }, l.sub + ' · ' + l.minutes + ' phút')),
       store.read[l.id] ? el('div', { class: 'done' }, '✓ Đã học') : null
     );
+  }
+  function lessonGroups() {
+    var basic = D.lessons.filter(function (l) { return l.grp !== 'nc'; });
+    var adv = D.lessons.filter(function (l) { return l.grp === 'nc'; });
+    var g = el('div', { class: 'grid' });
+    basic.forEach(function (l) { g.appendChild(lessonItem(l)); });
+    app.appendChild(g);
+    if (adv.length) {
+      app.appendChild(el('h2', { class: 'adv-head' }, 'Nâng cao ', el('span', { class: 'tag-adv' }, adv.length + ' bài')));
+      app.appendChild(el('p', { class: 'adv-note', html: '<b>Nên học sau khi đã xong 8 bài cơ bản ở trên.</b> Phần này dùng nhiều thuật ngữ và kiến thức của các bài trước, nên bạn sẽ dễ theo hơn khi đã nắm vững nền tảng.' }));
+      var g2 = el('div', { class: 'grid' });
+      adv.forEach(function (l) { g2.appendChild(lessonItem(l)); });
+      app.appendChild(g2);
+    }
   }
   function viewHome() {
     var bestVals = Object.keys(store.best).map(function (k) { return store.best[k]; });
     var bestTxt = bestVals.length ? Math.max.apply(null, bestVals) + '%' : '–';
     app.appendChild(el('div', { class: 'hero' },
       el('h1', {}, 'Y học cổ truyền cơ bản'),
-      el('p', {}, 'Học lý luận nền tảng từng bước, dành cho người mới bắt đầu: âm dương, ngũ hành, tạng phủ, khí huyết, kinh lạc, nguyên nhân bệnh, tứ chẩn và bát cương.')
+      el('p', {}, 'Học lý luận nền tảng từng bước, dành cho người mới bắt đầu: âm dương, ngũ hành, tạng phủ, khí huyết, kinh lạc, nguyên nhân bệnh, tứ chẩn và bát cương. Sau đó có phần Nâng cao: bệnh cơ, biện chứng tạng phủ, biện chứng ngoại cảm và các pháp điều trị.')
     ));
     app.appendChild(el('div', { class: 'stats' },
       el('div', { class: 'stat', html: '<b>' + count(store.read) + '/' + D.lessons.length + '</b><small>Bài đã học</small>' }),
@@ -93,9 +107,7 @@
     ));
     app.appendChild(el('h2', {}, 'Lộ trình học gợi ý'));
     app.appendChild(el('p', { class: 'sub' }, 'Học theo thứ tự từ trên xuống. Mỗi bài có phần “Cần nhớ” ở cuối, sau đó làm trắc nghiệm để kiểm tra.'));
-    var g = el('div', { class: 'grid' });
-    D.lessons.forEach(function (l) { g.appendChild(lessonItem(l)); });
-    app.appendChild(g);
+    lessonGroups();
     app.appendChild(el('div', { class: 'btn-row' },
       el('a', { class: 'btn ghost', href: '#/cards' }, 'Ôn thẻ thuật ngữ'),
       el('a', { class: 'btn', href: '#/quiz' }, 'Làm trắc nghiệm')
@@ -105,10 +117,8 @@
 
   function viewLessons() {
     app.appendChild(el('h1', {}, 'Bài học'));
-    app.appendChild(el('p', { class: 'sub' }, D.lessons.length + ' bài, học theo thứ tự để dễ hiểu nhất.'));
-    var g = el('div', { class: 'grid' });
-    D.lessons.forEach(function (l) { g.appendChild(lessonItem(l)); });
-    app.appendChild(g);
+    app.appendChild(el('p', { class: 'sub' }, D.lessons.length + ' bài (8 cơ bản và ' + D.lessons.filter(function (l) { return l.grp === 'nc'; }).length + ' nâng cao), học theo thứ tự để dễ hiểu nhất.'));
+    lessonGroups();
     app.appendChild(disclaimer());
   }
 
@@ -131,7 +141,10 @@
       case 'fig':
         if (!window.ART || !window.ART[b.id]) return null;
         return el('figure', { class: 'fig' }, el('div', { html: window.ART[b.id]() }), el('figcaption', {}, b.cap));
-      case 'widget': return WIDGETS[b.id] ? WIDGETS[b.id]() : null;
+      case 'widget':
+        if (WIDGETS[b.id]) return WIDGETS[b.id]();
+        if (window.WIDGETS_EXT && window.WIDGETS_EXT[b.id]) return window.WIDGETS_EXT[b.id]({ el: el, clear: clear, D: D });
+        return null;
     }
     return null;
   }
@@ -142,6 +155,7 @@
     app.appendChild(el('div', { class: 'sub' }, el('a', { href: '#/lessons' }, '← Danh sách bài học')));
     app.appendChild(el('h1', {}, l.icon + ' Bài ' + (i + 1) + ': ' + l.title));
     app.appendChild(el('p', { class: 'sub' }, l.sub + ' · khoảng ' + l.minutes + ' phút'));
+    if (l.grp === 'nc') app.appendChild(el('p', { class: 'adv-note', html: '<b>Bài Nâng cao.</b> Nên học sau khi đã xong 8 bài cơ bản. Gặp thuật ngữ lạ, hãy quay lại bài cơ bản hoặc xem phần “Giải thích thuật ngữ” trong bài.' }));
     l.blocks.forEach(function (b) { var n = block(b); if (n) app.appendChild(n); });
     app.appendChild(el('div', { class: 'keybox' },
       el('h3', {}, 'Cần nhớ'),
@@ -410,7 +424,9 @@
   function topicSelect(current, onchange) {
     var s = el('select');
     s.appendChild(el('option', { value: 'all' }, 'Tất cả chủ đề'));
-    D.topics.forEach(function (t) { s.appendChild(el('option', { value: t.id }, t.name)); });
+    var og1 = el('optgroup', { label: 'Cơ bản' }), og2 = el('optgroup', { label: 'Nâng cao' });
+    D.topics.forEach(function (t) { (t.grp === 'nc' ? og2 : og1).appendChild(el('option', { value: t.id }, t.name)); });
+    s.appendChild(og1); if (og2.firstChild) s.appendChild(og2);
     s.value = current;
     s.addEventListener('change', function () { onchange(s.value); });
     return s;

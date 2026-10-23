@@ -251,3 +251,17 @@ input[type="search"] { width: 100%; }
 .fd { fill: #1d2a27; } .fw { fill: #ffffff; } .fgreen { fill: #2a9d6b; } .fred { fill: #e0584a; }
 .fs { stroke: var(--ink); } .fsm { stroke: var(--muted); }
 .fcard { fill: var(--surface); stroke: var(--line); stroke-width: 1.5; }
+
+/* Nâng cao */
+.tag-adv { display: inline-block; font-size: 11.5px; font-weight: 700; padding: 1px 8px; border-radius: 999px; margin-left: 8px; vertical-align: 2px; background: #efe1fb; color: #5a2d8a; }
+@media (prefers-color-scheme: dark) { .tag-adv { background: #3d2a55; color: #dcc4f5; } }
+.adv-head { margin-top: 22px; }
+.adv-note { margin: 6px 0 10px; padding: 9px 12px; border-radius: 10px; border-left: 4px solid #8a5cc4; background: var(--key-bg); font-size: 15px; }
+.chips.tight .chip { padding: 6px 12px; }
+.res-card { margin-top: 10px; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg); }
+.res-card h5 { margin: 0 0 4px; font-size: 16px; }
+.res-card .row { font-size: 14.5px; margin: 3px 0; }
+.res-card .row b { color: var(--muted); font-weight: 600; }
+.seg { display: flex; gap: 6px; margin: 6px 0 10px; }
+.seg button { flex: 1; min-height: 42px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: inherit; font-size: 15px; cursor: pointer; }
+.seg button.on { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); font-weight: 700; }

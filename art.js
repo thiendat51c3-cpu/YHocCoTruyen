@@ -450,5 +450,6 @@
     return svg(360, 246, s, 'Bảng bốn chứng phối hợp: hư hàn, hư nhiệt, thực hàn, thực nhiệt và hướng điều chỉnh');
   };
 
+  ART._h = { esc: esc, svg: svg, tx: tx, marker: marker, rect: rect, pol: pol, sector: sector, nextId: function () { return 'mk' + (++uid); } };
   window.ART = ART;
 })();
