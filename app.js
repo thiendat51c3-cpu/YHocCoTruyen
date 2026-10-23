@@ -128,6 +128,9 @@
       case 'ul': return el('ul', {}, b.x.map(function (i) { return el('li', { html: i }); }));
       case 'note': return el('div', { class: 'note' }, el('strong', { html: b.title || 'Giải thích thuật ngữ' }), el('div', { html: b.x }));
       case 'table': return table(b);
+      case 'fig':
+        if (!window.ART || !window.ART[b.id]) return null;
+        return el('figure', { class: 'fig' }, el('div', { html: window.ART[b.id]() }), el('figcaption', {}, b.cap));
       case 'widget': return WIDGETS[b.id] ? WIDGETS[b.id]() : null;
     }
     return null;

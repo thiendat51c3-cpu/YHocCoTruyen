@@ -148,6 +148,7 @@ window.DATA = {
       blocks: [
         { t: "p", x: "<b>Âm dương</b> là cách người xưa chia mọi sự vật, hiện tượng thành hai mặt đối lập nhưng gắn bó với nhau: ngày – đêm, nóng – lạnh, trên – dưới. Y học cổ truyền (YHCT) dùng cách chia này để mô tả cơ thể, bệnh tật và cả thuốc men." },
         { t: "note", x: "<b>Dương</b>: mặt sáng, nóng, động, đi lên, đi ra ngoài. <b>Âm</b>: mặt tối, lạnh, tĩnh, đi xuống, đi vào trong. Âm dương <b>không phải tốt hay xấu</b>, chỉ là hai mặt của một thể thống nhất. Một vật có thể là Dương khi so với vật này và là Âm khi so với vật khác (tính tương đối)." },
+        { t: "fig", id: "taiji", cap: "Hình thái cực: nửa sáng là Dương, nửa tối là Âm. Chấm đậm trong vùng sáng nghĩa là trong Dương có mầm Âm; chấm sáng trong vùng tối nghĩa là trong Âm có mầm Dương." },
         { t: "h", x: "Bảng phân loại thường gặp" },
         { t: "table", head: ["Tiêu chí", "Dương", "Âm"], rows: [
           ["Thời gian", "Ban ngày", "Ban đêm"],
@@ -165,6 +166,7 @@ window.DATA = {
           "<b>Tiêu trưởng</b> (giảm – tăng): khi một bên tăng thì bên kia giảm. Ví dụ: từ sáng đến trưa, Dương tăng, trời nóng dần; từ chiều xuống đêm, Dương giảm, Âm tăng, trời mát dần.",
           "<b>Chuyển hóa</b>: khi đến cực điểm, một bên có thể chuyển thành bên kia. Ví dụ: “hàn cực sinh nhiệt, nhiệt cực sinh hàn”. Người sốt cao kéo dài có thể kiệt sức, tay chân lạnh toát."
         ] },
+        { t: "fig", id: "daycycle", cap: "Ví dụ quy luật tiêu trưởng trong một ngày: từ nửa đêm đến trưa Dương tăng, Âm giảm; từ trưa về nửa đêm thì ngược lại." },
         { t: "h", x: "Thử xem các trạng thái mất cân bằng" },
         { t: "p", x: "Bấm vào từng trạng thái bên dưới để xem Dương và Âm thay đổi ra sao, cùng biểu hiện thường gặp." },
         { t: "widget", id: "yinyang" }
@@ -189,6 +191,8 @@ window.DATA = {
           "<b>Tương sinh</b> (sinh ra, nuôi dưỡng): Mộc → Hỏa → Thổ → Kim → Thủy → Mộc. Hành sinh ra hành khác gọi là “mẹ”, hành được sinh ra gọi là “con”. Ví dụ: Mộc sinh Hỏa (củi cháy thành lửa), nên Mộc là mẹ của Hỏa.",
           "<b>Tương khắc</b> (chế ngự, kiềm chế): Mộc → Thổ → Thủy → Hỏa → Kim → Mộc. Ví dụ: Thủy khắc Hỏa (nước dập lửa). Khắc ở mức vừa phải là bình thường, giúp giữ cân bằng."
         ] },
+        { t: "fig", id: "nhsinh", cap: "Tương sinh qua hiện tượng đời thường. Mũi tên chỉ chiều “sinh ra”." },
+        { t: "fig", id: "nhkhac", cap: "Tương khắc qua hiện tượng đời thường. Mũi tên nét đứt chỉ chiều “khắc” (kiềm chế)." },
         { t: "p", x: "Bấm vào từng hành trên sơ đồ để xem nó sinh ai, được ai sinh, khắc ai, bị ai khắc, kèm các thuộc tính của hành đó." },
         { t: "widget", id: "nguhanh" },
         { t: "h", x: "Khi sinh khắc mất cân bằng" },
@@ -213,8 +217,10 @@ window.DATA = {
       blocks: [
         { t: "p", x: "YHCT chia nội tạng thành <b>năm tạng</b> (Tâm, Can, Tỳ, Phế, Thận) và <b>sáu phủ</b> (Đởm, Vị, Tiểu trường, Đại trường, Bàng quang, Tam tiêu). Học thuyết này gọi là <b>tạng tượng</b> (xem “tượng” bên ngoài để suy ra hoạt động của tạng bên trong)." },
         { t: "note", x: "<b>Tạng</b>: cơ quan “đặc”, thuộc Âm, có nhiệm vụ <b>tàng</b> (chứa giữ) tinh khí, không để thất thoát. <b>Phủ</b>: cơ quan “rỗng”, thuộc Dương, có nhiệm vụ <b>truyền hóa</b> (tiếp nhận, tiêu hóa, chuyển đi, bài tiết) nên cần thông suốt. Lưu ý: “Tỳ”, “Can”, “Thận”… trong YHCT là cả một hệ chức năng, không hoàn toàn trùng với cơ quan cùng tên trong y học hiện đại." },
+        { t: "fig", id: "body", cap: "Vị trí các tạng phủ trên cơ thể (hình minh họa đơn giản). Ba vùng màu là Tam tiêu: thượng tiêu (ngực), trung tiêu (bụng trên), hạ tiêu (bụng dưới). Màu mỗi tạng gợi ý hành của nó." },
         { t: "h", x: "Năm cặp tạng – phủ và Tâm bào – Tam tiêu" },
         { t: "p", x: "Mỗi tạng đi đôi với một phủ, gọi là quan hệ <b>biểu lý</b>. “Lý” là bên trong (tạng), “biểu” là bên ngoài (phủ). Hai bên nối với nhau bằng kinh lạc nên bệnh có thể ảnh hưởng qua lại. Bấm vào từng cặp để xem chức năng, khiếu và biểu hiện khi mất cân bằng." },
+        { t: "fig", id: "pairs", cap: "Sáu cặp tạng – phủ (quan hệ biểu lý). Hai bên của mỗi cặp luôn cùng một hành, nối với nhau bằng kinh lạc." },
         { t: "widget", id: "tangphu" },
         { t: "h", x: "Mối quan hệ giữa các tạng" },
         { t: "ul", x: [
@@ -237,6 +243,7 @@ window.DATA = {
       blocks: [
         { t: "p", x: "Theo YHCT, sự sống được duy trì bởi các chất cơ bản: <b>Tinh, Khí, Huyết, Tân dịch</b> và biểu hiện tổng hợp là <b>Thần</b>. Tinh – Khí – Thần được gọi là “ba báu vật” (<b>tam bảo</b>) của con người." },
         { t: "note", x: "<b>Khí</b> trong YHCT không chỉ là không khí hay hơi thở. Đó là <b>năng lượng chức năng vô hình</b> thúc đẩy mọi hoạt động của cơ thể: tiêu hóa, tuần hoàn, hô hấp, bảo vệ…" },
+        { t: "fig", id: "tambao", cap: "Tinh, Khí, Thần là “tam bảo”: Tinh hóa thành Khí, Khí hóa thành Thần." },
         { t: "table", head: ["Chất", "Là gì", "Nguồn gốc và vai trò"], rows: [
           ["Tinh", "Chất tinh túy nhất, nền tảng của sự sống.", "Tiên thiên tinh nhận từ cha mẹ, chứa ở Thận. Hậu thiên tinh từ thức ăn do Tỳ Vị chuyển hóa. Quyết định sinh trưởng, phát dục, sinh sản, già yếu."],
           ["Khí", "Năng lượng chức năng vô hình.", "Từ Tinh của Thận, từ thức ăn (Tỳ Vị) và khí trời hít vào (Phế). Có 5 chức năng: thúc đẩy, ôn ấm, phòng vệ, cố nhiếp, khí hóa."],
@@ -244,6 +251,7 @@ window.DATA = {
           ["Tân dịch", "Các chất lỏng bình thường của cơ thể.", "Tân: loãng, làm ẩm da, cơ (mồ hôi, nước mắt). Dịch: đặc, bôi trơn khớp, nuôi não tủy. Do Tỳ vận hóa, Phế tuyên giáng, Thận chủ thủy."],
           ["Thần", "Biểu hiện của sự sống: ý thức, tinh thần, ánh mắt, nét mặt.", "Còn Thần (đắc thần): mắt sáng, tỉnh táo. Mất Thần (thất thần): mắt đờ đẫn, lơ mơ, là dấu hiệu bệnh nặng."]
         ] },
+        { t: "fig", id: "flow", cap: "Khí và Huyết được hình thành từ thức ăn và khí trời như thế nào." },
         { t: "h", x: "Khí có những loại nào" },
         { t: "ul", x: [
           "<b>Nguyên khí</b>: khí gốc, xuất phát từ Thận, là động lực cho mọi tạng phủ.",
@@ -257,6 +265,7 @@ window.DATA = {
           "<b>Khí là soái của huyết</b>: khí sinh huyết, đẩy huyết đi, giữ huyết trong mạch.",
           "<b>Huyết là mẹ của khí</b>: huyết chứa và nuôi dưỡng khí. Mất huyết nhiều thì khí cũng hao theo."
         ] },
+        { t: "fig", id: "khrel", cap: "Khí và Huyết nương tựa lẫn nhau." },
         { t: "h", x: "Các tình trạng bệnh thường gặp" },
         { t: "table", head: ["Tình trạng", "Nghĩa", "Biểu hiện"], rows: [
           ["Khí hư", "Khí thiếu, yếu.", "Mệt, nói nhỏ, hơi thở ngắn, tự ra mồ hôi, dễ cảm."],
@@ -286,7 +295,9 @@ window.DATA = {
           "<b>Túc tam dương</b> (3 kinh Dương ở chân: Vị, Đởm, Bàng quang): đi từ đầu mặt xuống ngón chân.",
           "<b>Túc tam âm</b> (3 kinh Âm ở chân: Tỳ, Can, Thận): đi từ ngón chân lên bụng ngực."
         ] },
+        { t: "fig", id: "kinhdir", cap: "Hướng đi của 4 nhóm kinh, tính với người đứng thẳng và giơ hai tay lên (quy ước để dễ nhớ). Một bên làm ví dụ, bên kia đối xứng." },
         { t: "p", x: "Khí huyết lưu thông nối tiếp qua 12 kinh theo thứ tự: <b>Phế → Đại trường → Vị → Tỳ → Tâm → Tiểu trường → Bàng quang → Thận → Tâm bào → Tam tiêu → Đởm → Can → Phế</b>, tạo thành vòng tuần hoàn khép kín." },
+        { t: "fig", id: "clock", cap: "Mỗi kinh “vượng khí” nhất trong một khung 2 giờ. Số trong vòng là khung giờ (ví dụ 3–5 là từ 3 đến 5 giờ sáng)." },
         { t: "h", x: "12 kinh chính" },
         { t: "widget", id: "kinhlac" },
         { t: "h", x: "Hai mạch quan trọng trong tám mạch kỳ kinh" },
@@ -294,6 +305,7 @@ window.DATA = {
           "<b>Nhâm mạch</b>: chạy giữa mặt trước bụng, ngực, cổ. Được gọi là “bể của các kinh Âm”.",
           "<b>Đốc mạch</b>: chạy giữa mặt sau lưng, dọc cột sống, lên đỉnh đầu. Được gọi là “bể của các kinh Dương”."
         ] },
+        { t: "fig", id: "nhamdoc", cap: "Nhâm mạch và Đốc mạch trên cơ thể nhìn nghiêng." },
         { t: "note", title: "Lưu ý an toàn", x: "Nội dung chỉ để học lý luận. Châm cứu, bấm huyệt cần người có chuyên môn thực hiện. Một số huyệt (ví dụ Hợp cốc, Tam âm giao) thường được khuyến cáo thận trọng với phụ nữ có thai." }
       ],
       key: [
@@ -308,6 +320,7 @@ window.DATA = {
       id: "nguyennhan", icon: "🌬️", title: "Nguyên nhân gây bệnh", sub: "Lục dâm, thất tình và các yếu tố khác", minutes: 10,
       blocks: [
         { t: "p", x: "YHCT quan niệm bệnh xảy ra khi <b>tà khí</b> (yếu tố gây bệnh) mạnh hơn <b>chính khí</b> (sức chống đỡ của cơ thể). Chính khí đầy đủ thì tà khí khó xâm nhập. Nguyên nhân chia làm ba nhóm: <b>ngoại nhân</b> (từ bên ngoài), <b>nội nhân</b> (từ bên trong), và <b>bất nội ngoại nhân</b> (không thuộc hai nhóm trên)." },
+        { t: "fig", id: "scale", cap: "Bệnh phát sinh khi tà khí thắng chính khí." },
         { t: "h", x: "1. Ngoại nhân: Lục dâm" },
         { t: "note", x: "<b>Lục dâm</b> là sáu loại khí hậu (phong, hàn, thử, thấp, táo, hỏa) khi xuất hiện <b>quá mức hoặc trái mùa</b> thì gây bệnh. Khi diễn ra bình thường, sáu khí này gọi là “lục khí” và không gây bệnh." },
         { t: "table", head: ["Tà khí", "Đặc tính", "Biểu hiện thường gặp"], rows: [
@@ -318,6 +331,7 @@ window.DATA = {
           ["Táo (khô)", "Khô ráo, hao tân dịch, hay tổn thương Phế.", "Khô miệng mũi họng, ho khan, da khô, táo bón."],
           ["Hỏa (nhiệt)", "Nóng, bốc lên, hao tân dịch, dễ sinh phong.", "Sốt cao, mặt đỏ, khát, bứt rứt, mụn nhọt, chảy máu cam."]
         ] },
+        { t: "fig", id: "lucdam", cap: "Lục dâm: sáu loại khí hậu quá mức hoặc trái mùa. Mỗi loại có đặc tính riêng." },
         { t: "h", x: "2. Nội nhân: Thất tình" },
         { t: "p", x: "<b>Thất tình</b> là bảy trạng thái cảm xúc: Hỷ (vui), Nộ (giận), Ưu (lo), Tư (nghĩ ngợi), Bi (buồn), Khủng (sợ), Kinh (hoảng sợ). Cảm xúc quá mạnh hoặc kéo dài làm rối loạn khí của tạng phủ tương ứng." },
         { t: "table", head: ["Cảm xúc", "Tạng bị ảnh hưởng", "Khí biến đổi và biểu hiện"], rows: [
@@ -328,6 +342,7 @@ window.DATA = {
           ["Khủng (sợ)", "Thận", "Khí hạ (đi xuống): đại tiểu tiện không kiểm soát, mỏi lưng."],
           ["Kinh (hoảng sợ)", "Tâm, Đởm", "Khí loạn: hồi hộp, mất ngủ, sợ hãi."]
         ] },
+        { t: "fig", id: "thattinh", cap: "Thất tình: cảm xúc quá mức làm rối loạn khí của tạng tương ứng (gộp Ưu và Bi thành một thẻ)." },
         { t: "h", x: "3. Bất nội ngoại nhân" },
         { t: "ul", x: [
           "<b>Ăn uống</b>: ăn quá no hoặc quá đói làm tổn Tỳ Vị; ăn nhiều đồ sống lạnh sinh hàn; ăn nhiều đồ béo, ngọt, cay nóng sinh đàm thấp hoặc nhiệt.",
@@ -358,6 +373,7 @@ window.DATA = {
         ] },
         { t: "h", x: "Vọng lưỡi" },
         { t: "note", x: "Lưỡi gồm <b>chất lưỡi</b> (thân lưỡi, phản ánh khí huyết và tạng phủ) và <b>rêu lưỡi</b> (lớp phủ trên mặt lưỡi, phản ánh tình trạng Vị khí và tà khí)." },
+        { t: "fig", id: "tonguezones", cap: "Bản đồ lưỡi: mỗi vùng của lưỡi phản ánh một nhóm tạng phủ." },
         { t: "table", head: ["Dấu hiệu", "Gợi ý thường gặp"], rows: [
           ["Chất lưỡi hồng nhạt, rêu trắng mỏng", "Bình thường."],
           ["Chất lưỡi nhợt, bệu", "Hư hàn, khí huyết hư."],
@@ -368,8 +384,10 @@ window.DATA = {
           ["Rêu dày, nhớt", "Thấp, đàm, thức ăn tích trệ."],
           ["Lưỡi ít hoặc không rêu", "Âm hư, tân dịch hao."]
         ] },
+        { t: "fig", id: "tongueswatch", cap: "Một số mẫu lưỡi thường gặp (màu minh họa, thực tế thay đổi theo ánh sáng và từng người)." },
         { t: "h", x: "Thiết chẩn: Bắt mạch" },
         { t: "p", x: "Mạch thường bắt ở cổ tay, chỗ động mạch quay đập, dùng ba ngón đặt tại ba vị trí là <b>Thốn</b> (gần cổ tay nhất), <b>Quan</b> (giữa), <b>Xích</b> (xa nhất, gần khuỷu). Mạch bình thường có 4 đến 5 nhịp mỗi nhịp thở (khoảng 60 đến 90 nhịp/phút), đều, hòa hoãn, có lực vừa phải." },
+        { t: "fig", id: "wrist", cap: "Trên: ba vị trí bắt mạch Thốn, Quan, Xích. Dưới: mạch phù nổi nông, mạch trầm chìm sâu." },
         { t: "table", head: ["Mạch", "Cảm giác khi bắt", "Gợi ý"], rows: [
           ["Phù", "Chạm nhẹ đã thấy, ấn mạnh thì giảm.", "Bệnh ở biểu (ngoài)."],
           ["Trầm", "Phải ấn sâu mới thấy.", "Bệnh ở lý (trong)."],
@@ -403,7 +421,9 @@ window.DATA = {
           ["Hư", "Chính khí thiếu, yếu. Bệnh thường lâu ngày.", "Mệt, nói nhỏ, tự ra mồ hôi; đau âm ỉ, thích xoa bóp; lưỡi bệu nhợt; mạch hư nhược."],
           ["Thực", "Tà khí mạnh mà chính khí chưa suy. Bệnh thường cấp.", "Người khỏe, tiếng nói to, đau dữ dội ấn đau thêm, bụng chướng; rêu dày; mạch thực có lực."]
         ] },
+        { t: "fig", id: "bieuly", cap: "Biểu là lớp ngoài (da lông), lý là lớp trong (tạng phủ)." },
         { t: "note", title: "Âm dương là tổng cương", x: "Trong Bát cương, <b>Âm – Dương</b> gom lại hai nhóm lớn: <b>Dương chứng</b> thường là biểu, thực, nhiệt; <b>Âm chứng</b> thường là lý, hư, hàn. Thực tế thường gặp các chứng phối hợp, ví dụ <i>lý thực nhiệt</i>, <i>biểu hàn</i>, <i>hư hàn</i>, <i>hư nhiệt</i>." },
+        { t: "fig", id: "matrix", cap: "Ghép Hư–Thực với Hàn–Nhiệt thành bốn chứng thường gặp." },
         { t: "h", x: "Ví dụ phân tích" },
         { t: "table", head: ["Triệu chứng", "Phân tích", "Kết luận Bát cương"], rows: [
           ["Mới 2 ngày, sợ lạnh, sốt nhẹ, đau đầu, nghẹt mũi, nước mũi trong, rêu trắng mỏng, mạch phù", "Mới mắc, ở nông; lạnh.", "Biểu hàn"],
